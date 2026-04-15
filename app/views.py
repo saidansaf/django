@@ -4,5 +4,8 @@ from django.shortcuts import render
 
 from django.http import HttpResponse
 
-def hello_world(request):
-    return HttpResponse("Hello World")
+def rendering(request):
+    users=[
+        #{'ism':'Saidansaf','familiya':'Afzalxonov','yosh':'11'},
+    ]
+    return render(request,'app/index.html',context={"users":users})
