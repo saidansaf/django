@@ -1,0 +1,15 @@
+{% extends "app/base.html" %}
+
+{% block content %}
+    {% include "app/navbar.html" %}
+    {% for odam in users %}
+        <h1>{{ odam.ism }} {{ odam.familiya }}</h1>
+
+        {% if odam.yosh > 14 %}
+            <p>Siz katta ekansiz</p>
+        {% else %}
+            <p>Siz kichik ekansiz</p>
+        {% endif %}
+    {% endfor %}
+
+{% endblock %}
