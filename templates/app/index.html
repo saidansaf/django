@@ -1,15 +1,15 @@
-{% extends "app/base.html" %}
+{% extends 'app/base.html' %}
+{%block content %}
+    {% include 'app/navbar.html' %}
+    {% for inson in users %}
+        <a href=" app/user_view.html"><h1 class="abc">{{inson.ism}} {{inson.familiya}}</h1></a>
+        {% if inson.yosh > 11 and inson.yosh < 39 %}
+            <p class="abc">Bu odam normal yoshda</p>
+        {% elif inson.yosh > 40 %}
+            <p class="abc">Bu oka qarib qolibdi</p>
+        {%else%}
+            <p class="abc">Bu odamga hali bor</p>
+        {%endif%}
+    {%endfor%}
 
-{% block content %}
-    {% include "app/navbar.html" %}
-    {% for odam in users %}
-        <h1>{{ odam.ism }} {{ odam.familiya }}</h1>
-
-        {% if odam.yosh > 14 %}
-            <p>Siz katta ekansiz</p>
-        {% else %}
-            <p>Siz kichik ekansiz</p>
-        {% endif %}
-    {% endfor %}
-
-{% endblock %}
+{%endblock%}
