@@ -117,7 +117,7 @@ USE_TZ = True
 MEDIA_ROOT=BASE_DIR/'media'
 MEDIA_URL='/media/'
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 import os
 
 # Default primary key field type
