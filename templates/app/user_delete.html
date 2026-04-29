@@ -1,0 +1,9 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+    <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+        <h1>{{user.ism}} {{user.familiya}} siz haqiqatdan ham shu foydalanuvchini ochirmoqchimisiz?</h1>
+    <button type="submit">Delete</button>
+    </form>
+{% endblock %}

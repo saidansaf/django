@@ -2,12 +2,11 @@
 
 {% extends 'app/base.html' %}
 {%block content %}
+    <a href="{% url 'user_create' %}">Foydalanuvchi qoshish</a>
     {% include 'app/navbar.html' %}
     {% for user in users %}
         <a href="{% url 'user_view' user.slug %}"><h1 class="abc">{{user.ism}} {{user.familiya}}</h1></a>
     {%endfor%}
-    <br>
-    <a href="{% url 'create_user' %}" class="ggs">Foydalanuvchi qo'shish</a>
 
 {%endblock%}
 
