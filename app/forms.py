@@ -4,5 +4,5 @@ from . import models
 
 class UserForm(forms.ModelForm):
     class Meta:
-        model = models.User
-        fields = ['ism', 'familiya', 'yosh', 'picture']
+        model=models.Student
+        fields=['name','surename','age','picture','phone_number','email']

@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>bu navbar htmldagi narsa</h1>
-</body>
-</html>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="{% url 'user_list' %}">UserApp</a>
+
+    <div>
+      <a class="btn btn-success" href="{% url 'user_create' %}">+ Add User</a>
+    </div>
+  </div>
+</nav>

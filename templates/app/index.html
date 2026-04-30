@@ -1,12 +1,27 @@
-
-
 {% extends 'app/base.html' %}
-{%block content %}
-    <a href="{% url 'user_create' %}">Foydalanuvchi qoshish</a>
-    {% include 'app/navbar.html' %}
-    {% for user in users %}
-        <a href="{% url 'user_view' user.slug %}"><h1 class="abc">{{user.ism}} {{user.familiya}}</h1></a>
-    {%endfor%}
 
-{%endblock%}
+{% block content %}
+<h2 class="mb-4">Users List</h2>
 
+<div class="row">
+{% for user in users %}
+    <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+            <img src="{{ user.picture.url }}" class="card-img-top" style="height:200px; object-fit:cover;">
+
+            <div class="card-body">
+                <h5 class="card-title">{{ user.ism }} {{ user.familiya }}</h5>
+                <p class="card-text">Age: {{ user.yosh }}</p>
+
+                <a href="{% url 'user_view' user.slug %}" class="btn btn-primary btn-sm">View</a>
+                <a href="{% url 'user_update' user.slug %}" class="btn btn-warning btn-sm">Edit</a>
+                <a href="{% url 'user_delete' user.id %}" class="btn btn-danger btn-sm">Delete</a>
+            </div>
+        </div>
+    </div>
+{% empty %}
+<p>No users found</p>
+{% endfor %}
+</div>
+
+{% endblock %}

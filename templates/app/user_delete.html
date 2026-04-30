@@ -1,9 +1,16 @@
 {% extends 'app/base.html' %}
 
 {% block content %}
-    <form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-        <h1>{{user.ism}} {{user.familiya}} siz haqiqatdan ham shu foydalanuvchini ochirmoqchimisiz?</h1>
-    <button type="submit">Delete</button>
+<div class="card p-4 shadow text-center">
+
+    <h3>Delete User</h3>
+    <p>Are you sure you want to delete <b>{{ user.ism }}</b>?</p>
+
+    <form method="POST">
+        {% csrf_token %}
+        <button class="btn btn-danger">Yes, Delete</button>
+        <a href="{% url 'user_list' %}" class="btn btn-secondary">Cancel</a>
     </form>
+
+</div>
 {% endblock %}

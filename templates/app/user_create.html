@@ -1,9 +1,14 @@
 {% extends 'app/base.html' %}
 
 {% block content %}
-    <form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Create</button>
+<div class="card p-4 shadow">
+    <h3>Create User</h3>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button class="btn btn-success">Save</button>
     </form>
+</div>
 {% endblock %}

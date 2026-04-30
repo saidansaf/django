@@ -1,13 +1,15 @@
 {% extends 'app/base.html' %}
-{%block content %}
-        <h1>{{user.ism}} {{user.familiya}} <mark>Yosh: {{user.yosh}}</mark></h1>
-        {% if user.picture and user.picture.url %}
-            <img src="{{ user.picture.url }}" width="300" height="200">
-        {% else %}
-            <img src="/media/images/default/default.png" width="200" height="200">
-        {% endif %}
-        <hr>
-        <a href="{% url 'user_list' %}">bosh sahifaga qaytish</a>
-        <a href="{% url 'user_update' user.slug %}">Foydalanuvchi malumotlarini tahrirlash</a>
-        <a href="{% url 'user_delete' user.slug %}">Foydalanuvchini o'chirish</a>
-{%endblock%}
+
+{% block content %}
+<div class="card shadow p-4 text-center">
+
+    <img src="{{ user.picture.url }}" class="rounded-circle mb-3" width="150" height="150" style="object-fit:cover;">
+
+    <h3>{{ user.ism }} {{ user.familiya }}</h3>
+    <p>Age: {{ user.yosh }}</p>
+
+    <a href="{% url 'user_update' user.slug %}" class="btn btn-warning">Edit</a>
+    <a href="{% url 'user_delete' user.id %}" class="btn btn-danger">Delete</a>
+
+</div>
+{% endblock %}
