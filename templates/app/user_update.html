@@ -7,9 +7,9 @@
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
 
-        <input class="form-control mb-2" type="text" name="ism" value="{{ user.ism }}">
-        <input class="form-control mb-2" type="text" name="familiya" value="{{ user.familiya }}">
-        <input class="form-control mb-2" type="number" name="yosh" value="{{ user.yosh }}">
+        <input class="form-control mb-2" type="text" name="name" value="{{ user.name }}">
+        <input class="form-control mb-2" type="text" name="surename" value="{{ user.surename }}">
+        <input class="form-control mb-2" type="number" name="age" value="{{ user.age }}">
 
         <input class="form-control mb-3" type="file" name="picture">
 

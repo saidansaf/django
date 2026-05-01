@@ -10,8 +10,10 @@
             <img src="{{ user.picture.url }}" class="card-img-top" style="height:200px; object-fit:cover;">
 
             <div class="card-body">
-                <h5 class="card-title">{{ user.ism }} {{ user.familiya }}</h5>
-                <p class="card-text">Age: {{ user.yosh }}</p>
+                <h5 class="card-title">{{ user.name }} {{ user.surename }}</h5>
+                <p class="card-text">Age: {{ user.age }}</p>
+                <p class="card-text">Email: {{ user.email }}</p>
+                <p class="card-text">Phone: {{ user.phone_number }}</p>
 
                 <a href="{% url 'user_view' user.slug %}" class="btn btn-primary btn-sm">View</a>
                 <a href="{% url 'user_update' user.slug %}" class="btn btn-warning btn-sm">Edit</a>

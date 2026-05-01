@@ -27,9 +27,9 @@ class UserDetailView(DetailView):
 def user_update(request, slug):
     user = get_object_or_404(models.Student, slug=slug)
     if request.method=='POST':
-        user.ism = request.POST.get('ism')
-        user.familiya = request.POST.get('familiya')
-        user.yosh = request.POST.get('yosh')
+        user.name = request.POST.get('name')
+        user.surename = request.POST.get('surename')
+        user.age = request.POST.get('age')
         if request.FILES.get('picture'):
             user.picture = request.FILES.get('picture')
         user.save()
