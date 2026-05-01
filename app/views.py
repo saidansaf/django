@@ -11,7 +11,7 @@ class UserListView(ListView):
     context_object_name='users'
 
 def user_create(request):
-    form=forms.UserForm(request.POST or None, request.FILES or None)
+    form=forms.UserForm(request.POST, request.FILES)
     if form.is_valid():
         form.save()
         return redirect('user_list')
